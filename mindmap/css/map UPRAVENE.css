@@ -1,0 +1,121 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+svg {
+  pointer-events: all;
+}
+svg > .item > foreignObject > .content {
+  font-weight: bold;
+  border-width: 2px;
+  font-size: 140%;
+}
+svg > .item > .toggle {
+  display: none;
+}
+svg > .item > .item > foreignObject > .content {
+  border-width: 2px;
+  font-size: 120%;
+}
+.item .cut {
+  opacity: 0.5;
+}
+
+.item foreignObject {
+  overflow: visible;
+}
+.item .content {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.item .content > * {
+  flex: none;
+}
+.item.collapsed .item {
+  display: none;
+}
+.item .text {
+  text-align: center;
+  min-width: 0.5em;
+  min-height: 1.3em;
+  line-height: 1.3em;
+  outline: none;
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+.item .toggle {
+  cursor: pointer;
+}
+.item .toggle:not(:hover) {
+  opacity: 0.7;
+}
+.item .toggle circle {
+  stroke: #00f;
+  fill: #88f;
+}
+.item .toggle path {
+  stroke: #fff;
+  stroke-width: 2;
+}
+.item .notes {
+  text-align: right;
+  width: 20px;
+  height: 18px;
+  opacity: 1;
+  background: url("./img/ikona-detail-dokumentu-18px.png") right center no-repeat; /* notes-indicator.png */
+  border-style: none;
+}
+.item .notes:hover{
+  width: 22px;
+  height: 18px;
+  opacity: 0.7;
+}
+.item .notes[title]:hover {
+  cursor: help;
+}
+.item:not(.current):not(.collapsed) > .toggle {
+  display: none;
+}
+.item.current > foreignObject > .content {
+  background-color: rgb(250 215 109);  /* rgba(255, 255, 187, 0.9) */
+}
+[data-shape="box"] > foreignObject > .content {
+  padding: 0.15em 0.4em;
+  background-color: #fff;
+  border: 1px solid #666;
+  border-radius: 3px;
+}
+[data-shape="ellipse"] > foreignObject > .content {
+  background-color: #fff;
+  border: 1px solid #666;
+  border-radius: 50%;
+  padding: 0.5em 1em;
+}
+[data-align="left"] > foreignObject > .content > :not(.text):not(.notes) {
+  margin-right: 0.3em;
+}
+[data-align="right"] > foreignObject > .content {
+  flex-direction: row;
+}
+[data-align="right"] > foreignObject > .content > :not(.text):not(.notes) {
+  margin-left: 0.3em;
+}
+
+
+/* Martas doplňuje - někdo později zatřiďte správně dle štábní kultury */
+
+.item .text {
+    text-align: center;
+    min-width: 1 em;
+    min-height: 1.3em;
+    line-height: 1.3em;
+    outline: none;
+    margin-bottom: 2px;
+    margin-left: 25px;
+    font-size: x-large;
+    color: black;
+    opacity: 1;
+}

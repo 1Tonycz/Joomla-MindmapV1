@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+		<title>Topic Mind - kategorie v mindmap</title>
+		
+		<link rel="icon" href="./logo/zarovka-fixa-sml2.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./css/map.css"/>
+		<link rel="stylesheet" href="./css/my-mind.css"/>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<main>
+			<button data-modal-target="#modal" id="openModal">Open Modal</button>
+			<div class="modal" id="modal">
+				<div class="modal-header">
+					<div class="title" id="intro"></div>
+					<button data-close-button class="close-button">&times;</button>
+				</div>
+				<div class="modal-body" id="text"></div>
+				<div class="modal-footer" style="padding: 0 15px;">
+                    <div class="legenda">Odkaz na zdrojový článek:</div>
+					<a href="" id="urlLink" target="_blank" rel="noopener noreferrer"></a>
+					<a href="" id="link" rel="noopener noreferrer">Číst dál</a>
+					<div style="clear: both;"></div>
+				</div>
+			</div>
+			<div id="overlay"></div>
+		</main>	
+		
+		<div id="ui" class="pane">
+			<button class="help-btn" data-command="help" title="Nápověda"><img src="img/help.png" alt="Help" /></button>
+			<img id="throbber" alt="throbber" src="./img/throbber.gif" />
+		</div>
+
+		<div id="help" class="pane" hidden>
+			<div class="help-header">
+				<h3>Nápověda</h3>
+				<button class="close-btn">&times;</button>
+			</div>
+
+			<p>Ovládání myší nebo klávesnicí</p>
+			<table class="navigation">
+				  <tr>
+					<td>Posouvání mapy</td>
+					<td>W/A/S/D</td>
+				  </tr>
+				  <tr>
+					<td>Procházení větví</td>
+					<td>&#8593/&#8595/&#8594/&#8592</td>
+				  </tr>
+				  <tr>
+					<td>Přiblížení/Oddálení mapy</td>
+					<td>+/-</td>
+				  </tr>
+				  <tr>
+					<td>Vybrat kořenový prvek</td>
+					<td>Home</td>
+				  </tr>
+				  <tr>
+					<td>Vycentrovaní mapy na střed</td>
+					<td>End</td>
+				  </tr>
+				  <tr>
+					<td>Složit/Rozložit větev</td>
+					<td>F</td>
+				  </tr>
+			</table>
+		</div>
+
+		<script src="my-mind.js"></script>
+		
+	</body>
+</html>
